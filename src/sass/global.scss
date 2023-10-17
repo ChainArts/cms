@@ -1,0 +1,58 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+a{
+    color: $primary;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    min-width: 100%;
+    font-size: $font-size;
+    background-color: $bgwhite;
+}
+
+header {
+    padding: $pad-vert $pad-slim 16rem $pad-slim;
+    margin-bottom: $section-pad;
+    background-color: black;
+    background-image: url('./images/hero_img.png');
+    background-size: cover;
+    background-position: center 0rem;
+    background-repeat: no-repeat;
+}
+
+@mixin button {
+    
+    border: 2px solid $primary;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: $font-size;
+    display: inline-block;
+}
+
+.upperheading{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+h2{
+    font-size: $font-size-large;
+    font-weight: 300;
+    color: $primary;
+    margin-bottom: $font-size-larger;
+}
+
+h3{
+    font-size: $font-size-larger;
+    font-weight: 300;
+    color: $primary;
+}
+
+p{
+    font-weight: 300;
+    color: $bggray-light;
+    line-height: $font-size-larger;
+}

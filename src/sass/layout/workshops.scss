@@ -1,0 +1,122 @@
+@mixin wscard {
+    & .ws-card-content {
+        background-color: $bggray-light;
+        padding: 2rem;
+    }
+    & p{
+        color: white;
+    }
+}
+
+
+#workshops {
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    & .ws-card{
+        @include wscard;
+        width: 79rem;
+
+    }
+}
+
+@include breakpoint(0, $mobile) {
+  #workshops {
+  }
+}
+
+@mixin wsicon  {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    position: absolute;
+}
+
+@include breakpoint($desktop) {
+  #workshops {
+    .ws-card{
+        display: flex;
+        flex-direction: row;
+        
+
+        & .ws-card-content{
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+
+            & .ws-description{
+                flex: 2;
+                flex-direction: column;
+                gap: 2rem;
+                width: 100%;
+
+                p{
+                    padding: $pad-slim/2 0 0 0;
+                    line-height: 1.75rem;
+                }
+
+                & a{
+                    @include button;
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    margin-top: 1rem;
+                }
+            }
+
+            & .ws-icon{
+                width: 100%;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                & .icon-bg{
+                    background-color: #595959;
+                    padding: 2rem;
+                    border-radius: 50%;
+                    
+                    img{
+                        scale: 0.8;
+                    }
+                }
+            }
+
+            & blockquote{
+                width: 100%;
+                flex: 1;
+                font-size: $font-size-larger;
+
+                &.layout-1{
+                    position: relative;
+                    img{
+                        @include wsicon;
+                        bottom:0;
+                        right: 0;
+                    }
+                }
+
+                &.layout-2, &.layout-3{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    position: relative;
+                    img{
+                        @include wsicon;
+                        top:0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        span{
+            font-size: 300px;
+            font-weight: 600;
+            color: $bggray-light;
+            margin-right: -1.5rem;
+    }
+  }
+}
+}
+
+

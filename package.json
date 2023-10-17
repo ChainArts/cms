@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "esbuild": "^0.19.4",
+    "gulp": "^4.0.2",
+    "sass": "^1.69.2"
+  }
+}

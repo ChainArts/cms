@@ -1,0 +1,33 @@
+// MAX-WIDTH CONTAINER SIZE
+$max-width: 1920;
+
+
+// BREAKPOINTS
+$mobile: 599;
+$desktop: $mobile + 1;
+
+
+// COLORS
+// $copy: ;
+// $bgcolor: ;
+$bggray: hsl(207, 8%, 22%);
+
+$primary: hsl(26, 62%, 57%);
+$bggray-light: hsl(0, 0%, 21%);
+$bgwhite: hsl(23, 100%, 97%);
+$bglight-orange: hsl(23, 100%, 97%);
+$bggray-ultralight: hsl(0, 0%, 97%);
+
+$font-size: 22px;
+$font-size-larger: 38px;
+$font-size-large: 68px;
+
+// GAPS
+
+$pad-slim: 2.25rem;
+$pad-vert: 47px;
+$section-pad: 8rem;
+
+// Animation
+$ease: cubic-bezier(.14,.8,.4,1);
+

@@ -1,0 +1,19 @@
+footer {
+    height: 2*$section-pad;
+    background-color: $bggray-light;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100vw;
+    width: 100%;
+    padding: 2rem $pad-vert ;
+
+    & p{
+    color: white;
+    }
+
+    & p:first-child{
+        font-size: $font-size-larger;
+    }
+}
+
