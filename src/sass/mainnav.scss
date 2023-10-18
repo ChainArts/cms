@@ -1,8 +1,43 @@
 @include breakpoint(0, $mobile) {
+    .mobile-hidden{
+        @include hidden;
+    }
+
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $bggray;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100vw);
+        transition: all 0.4s $ease;
+        overflow: hidden;
+        & ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+
+    .menu-open{
+        transform: translateX(0);
+    }
     
 }
 
 @include breakpoint($desktop) {
+    .desktop-hidden{
+        @include hidden;
+    }
+
     nav ul{
         display: flex;
         flex-direction: row;
@@ -35,9 +70,6 @@
             }
             &:nth-child(2) {
                 margin-left: auto;
-            }
-            &:last-child{
-                margin-right: 3rem;
             }
         }
     }

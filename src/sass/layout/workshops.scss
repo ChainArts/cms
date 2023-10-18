@@ -17,8 +17,6 @@
 
     & .ws-card{
         @include wscard;
-        width: 79rem;
-
     }
 }
 
@@ -27,7 +25,7 @@
   }
 }
 
-@mixin wsicon  {
+@mixin wsquote  {
     width: 55%;
     height: 55%;
     object-fit: contain;
@@ -37,8 +35,11 @@
 @include breakpoint($desktop) {
   #workshops {
     .ws-card{
+        position: relative;
         display: flex;
         flex-direction: row;
+        margin-left: 8rem;
+        width: 70%;
         
 
         & .ws-card-content{
@@ -46,7 +47,7 @@
             flex-direction: row;
             gap: 2.5rem;
 
-            & .ws-description{
+        & .ws-description{
                 flex: 2;
                 flex-direction: column;
                 gap: 2rem;
@@ -91,7 +92,7 @@
                 &.layout-1{
                     position: relative;
                     img{
-                        @include wsicon;
+                        @include wsquote;
                         bottom:0;
                         right: 0;
                     }
@@ -102,7 +103,7 @@
                     flex-direction: column-reverse;
                     position: relative;
                     img{
-                        @include wsicon;
+                        @include wsquote;
                         top:0;
                         right: 0;
                     }
@@ -114,6 +115,9 @@
             font-weight: 600;
             color: $bggray-light;
             margin-right: -1.5rem;
+            display: inline-block;
+            position: absolute;
+            left: -8rem;
     }
   }
 }

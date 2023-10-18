@@ -1,5 +1,6 @@
 *, *:after, *:before {
     box-sizing: border-box;
+    user-select: none;
 }
 
 a{
@@ -10,7 +11,7 @@ body {
     font-family: 'Source Sans 3', sans-serif;
     min-width: 100%;
     font-size: $font-size;
-    background-color: $bgwhite;
+    background: $bgwhite !important;
 }
 
 header {
@@ -19,7 +20,7 @@ header {
     background-color: black;
     background-image: url('./images/hero_img.png');
     background-size: cover;
-    background-position: center 0rem;
+    background-position: center 0;
     background-repeat: no-repeat;
 }
 
@@ -54,5 +55,5 @@ h3{
 p{
     font-weight: 300;
     color: $bggray-light;
-    line-height: $font-size-larger;
+    line-height: 1.8rem;
 }
