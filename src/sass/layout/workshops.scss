@@ -3,29 +3,29 @@
         background-color: $bggray-light;
         padding: 2rem;
     }
-    & p{
+
+    & p {
         color: white;
     }
 }
 
 
 #workshops {
- 
+
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    & .ws-card{
+    & .ws-card {
         @include wscard;
     }
 }
 
 @include breakpoint(0, $mobile) {
-  #workshops {
-  }
+    #workshops {}
 }
 
-@mixin wsquote  {
+@mixin wsquote {
     width: 55%;
     height: 55%;
     object-fit: contain;
@@ -33,32 +33,46 @@
 }
 
 @include breakpoint($desktop) {
-  #workshops {
-    .ws-card{
-        position: relative;
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .ws-card:first-child {
+            align-self: flex-end;
+        }
+
+        .ws-card:last-child {
+            align-self: flex-start;
+        }
+    }
+
+    .ws-card {
         display: flex;
         flex-direction: row;
-        margin-left: 8rem;
         width: 70%;
-        
+        height: 20rem;
 
-        & .ws-card-content{
+
+        .ws-card-content {
             display: flex;
             flex-direction: row;
             gap: 2.5rem;
 
-        & .ws-description{
+            & .ws-description {
                 flex: 2;
                 flex-direction: column;
                 gap: 2rem;
                 width: 100%;
 
-                p{
+                p {
                     padding: $pad-slim/2 0 0 0;
                     line-height: 1.75rem;
                 }
 
-                & a{
+                & a {
                     @include button;
                     color: white;
                     padding: 1rem 1.5rem;
@@ -66,61 +80,63 @@
                 }
             }
 
-            & .ws-icon{
+            & .ws-icon {
                 width: 100%;
+                height: 100%;
                 flex: 1;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
-                & .icon-bg{
+
+                & .icon-bg {
                     background-color: #595959;
                     padding: 2rem;
                     border-radius: 50%;
-                    
-                    img{
+
+                    img {
                         scale: 0.8;
                     }
                 }
             }
+        }
 
-            & blockquote{
-                width: 100%;
-                flex: 1;
-                font-size: $font-size-larger;
+        .quote-container {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            position: relative;
 
-                &.layout-1{
-                    position: relative;
-                    img{
-                        @include wsquote;
-                        bottom:0;
-                        right: 0;
-                    }
-                }
-
-                &.layout-2, &.layout-3{
-                    display: flex;
-                    flex-direction: column-reverse;
-                    position: relative;
-                    img{
-                        @include wsquote;
-                        top:0;
-                        right: 0;
-                    }
+            &.layout-1 {
+                img {
+                    @include wsquote;
+                    bottom: 0;
+                    right: 0;
                 }
             }
+
+            &.layout-2,
+            &.layout-3 {
+                display: flex;
+                flex-direction: column-reverse;
+
+                img {
+                    @include wsquote;
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            blockquote {
+                font-size: $font-size-larger;
+            }
         }
-        span{
+
+        span {
             font-size: 300px;
             font-weight: 600;
             color: $bggray-light;
-            margin-right: -1.5rem;
             display: inline-block;
             position: absolute;
-            left: -8rem;
+        }
     }
-  }
 }
-}
-
-
