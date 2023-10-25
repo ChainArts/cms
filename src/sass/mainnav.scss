@@ -1,12 +1,38 @@
+nav ul{
+    font-weight: 300;
+        li:first-child a {
+        color: white;
+        span{
+            font-weight: 600;
+        }
+    }
+}
+
+header {
+    padding: $pad-vert $pad-slim 16rem $pad-slim;
+    margin-bottom: $section-pad;
+    background-color: black;
+    background-image: url('./images/hero_img.png');
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+
 @include breakpoint(0, $mobile) {
     .mobile-hidden{
         @include hidden;
     }
 
+    header{
+        padding: $pad-mobile $pad-mobile 8rem $pad-mobile;
+        margin-bottom: $section-pad-mobile;
+        background-position: right 0;
+    }
+
     .menu{
         position: fixed;
         top: 0;
-        left: 0;
         width: 100vw;
         height: 100vh;
         background-color: $bggray;
@@ -15,7 +41,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateX(-100vw);
+        transform: translateX(0vw);
+        left: -100vw;
         transition: all 0.4s $ease;
         overflow: hidden;
         & ul{
@@ -28,7 +55,23 @@
     }
 
     .menu-open{
-        transform: translateX(0);
+        transform: translateX(100vw) !important;
+    }
+
+    .hero-items{
+        padding: 5rem 0 0 50%;
+        h1{
+            font-size: $font-size;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: $primary;
+        }
+        & a.button{
+            @include button;
+            font-size: $font-size-mobile;
+            padding: calc($font-size/2) 1rem;
+            color: white;
+        }
     }
     
 }
@@ -43,7 +86,6 @@
         flex-direction: row;
         gap: 2rem;
         li{
-            font-weight: 300;
             &:not(:first-child) a{
                 font-weight: 600;
                 
@@ -86,7 +128,6 @@
             @include button;
             padding: $font-size 2rem;
             color: white;
-    
         }
     }
 }

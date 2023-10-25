@@ -4,6 +4,7 @@ $max-width: 1920;
 
 // BREAKPOINTS
 $mobile: 690;
+$workshops-full-width: 1420;
 $desktop: $mobile + 1;
 
 
@@ -18,6 +19,7 @@ $bgwhite: hsl(0, 0%, 100%);
 $bglight-orange: hsl(23, 100%, 97%);
 $bggray-ultralight: hsl(0, 0%, 97%);
 
+$font-size-mobile: 18px;
 $font-size: 20px;
 $font-size-larger: 38px;
 $font-size-large: 68px;
@@ -27,6 +29,8 @@ $font-size-large: 68px;
 $pad-slim: 2rem;
 $pad-vert: 47px;
 $section-pad: 8rem;
+$section-pad-mobile: $section-pad / 2;
+$pad-mobile: 1rem;
 
 // Animation
 $ease: cubic-bezier(.14,.8,.4,1);

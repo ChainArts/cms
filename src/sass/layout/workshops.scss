@@ -22,12 +22,24 @@
 }
 
 @include breakpoint(0, $mobile) {
-    #workshops {}
+    #workshops {
+        .ws-card{
+            width: 100%;
+        }
+    }
 }
 
+@include breakpoint($mobile, $workshops-full-width) {
+    #workshops {
+        .ws-card{
+            width: 100%;
+        }
+    }
+} 
+
 @mixin wsquote {
-    width: 55%;
-    height: 55%;
+    width: 6rem;
+    height: 6rem;
     object-fit: contain;
     position: absolute;
 }
@@ -52,9 +64,9 @@
     .ws-card {
         display: flex;
         flex-direction: row;
-        width: 70%;
+        width: 80%;
         height: 20rem;
-
+        position: relative;
 
         .ws-card-content {
             display: flex;
@@ -68,7 +80,7 @@
                 width: 100%;
 
                 p {
-                    padding: $pad-slim/2 0 0 0;
+                    padding: calc($pad-slim/2) 0 0 0;
                     line-height: 1.75rem;
                 }
 
@@ -136,7 +148,6 @@
             font-weight: 600;
             color: $bggray-light;
             display: inline-block;
-            position: absolute;
         }
     }
 }

@@ -9,9 +9,11 @@ section{
     padding: 0 $pad-slim 0 $pad-slim;
 }
 
+
 #about-me{
     padding: $section-pad $pad-slim $section-pad $pad-slim;
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     background-color: $bglight-orange;
 
@@ -77,11 +79,48 @@ article{
 
 
 @include breakpoint(0, $mobile) {
-  main {
-  }
+
+    main{
+        margin-bottom: $section-pad-mobile;
+    }
+  .padded-section-mobile{
+        padding: 0 $pad-mobile 0 $pad-mobile;
+    }
+
+    section{
+        padding: 0;
+    }
+
+    #about-me{
+        padding: 0 0 0 0;
+        flex-direction: column;
+
+        .about-content{
+            padding: 0 $pad-mobile 0 $pad-mobile ;
+        }
+    
+        
+    }
+
+    
+    article{
+        width: 80%;
+        min-width: 80%;
+        & p{
+            margin: 0 $pad-mobile 0 $pad-mobile;
+        }
+
+        & img{
+            height: 13rem;
+        }
+
+        & a {
+            margin-left: $pad-mobile;
+        }
+    }
 }
 
 @include breakpoint($desktop) {
-
+    
 }
 

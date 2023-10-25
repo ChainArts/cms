@@ -3,16 +3,41 @@
         width: 2rem;
         height: 2rem;
         position: absolute;
-        top: 2rem;
-        right: 2rem;
+        top: $pad-mobile;
+        right: $pad-mobile;
         cursor: pointer;
         z-index: 200;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        :last-child{
+            width: 1.3rem;
+
+        }
+
         & span{
             content: "";
             display: block;
             height: 2px;
-            width: 100%;
+            width: 2rem;
             background-color: $primary;
+            margin-bottom: 8px;
+            transition: all 0.4s $ease;
+        }
+    }
+
+    .burger-open{
+        align-items: center;
+        span{
+            &:nth-child(1){
+                transform: rotate(45deg) translate(0.225rem, 0.225rem);
+            }
+            &:nth-child(2){
+                width: 2rem;                
+                transform: rotate(-45deg) translate(0.225rem, -0.225rem);
+            }
         }
     }
 }

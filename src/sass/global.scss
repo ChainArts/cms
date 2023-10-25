@@ -14,16 +14,6 @@ body {
     background: $bgwhite !important;
 }
 
-header {
-    padding: $pad-vert $pad-slim 16rem $pad-slim;
-    margin-bottom: $section-pad;
-    background-color: black;
-    background-image: url('./images/hero_img.png');
-    background-size: cover;
-    background-position: center 0;
-    background-repeat: no-repeat;
-}
-
 @mixin button {
     
     border: 2px solid $primary;
@@ -56,4 +46,22 @@ p{
     font-weight: 300;
     color: $bggray-light;
     line-height: 1.8rem;
+}
+
+@include breakpoint(0, $mobile){
+    body{
+        font-size: $font-size-mobile;
+    }
+
+    h2{
+        font-size: 28px;
+    }
+
+    h3{
+        font-size: 22px;
+    }
+
+    .upperheading{
+        font-size: 1rem;
+    }
 }
