@@ -9,13 +9,14 @@ nav ul{
 }
 
 header {
-    padding: $pad-vert $pad-slim 16rem $pad-slim;
+    padding: $pad-vert 4rem $pad-vert $pad-slim;
     margin-bottom: $section-pad;
     background-color: black;
     background-image: url('./images/hero_img.png');
     background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
+    height: 97vh;
 }
 
 
@@ -25,37 +26,47 @@ header {
     }
 
     header{
-        padding: $pad-mobile $pad-mobile 8rem $pad-mobile;
+        padding: $pad-mobile;
         margin-bottom: $section-pad-mobile;
         background-position: right 0;
+        height: 60vh;
     }
 
     .menu{
         position: fixed;
         top: 0;
-        width: 100vw;
+        width: 20rem;
         height: 100vh;
         background-color: $bggray;
         z-index: 100;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         transform: translateX(0vw);
-        left: -100vw;
+        right: -100vw;
         transition: all 0.4s $ease;
         overflow: hidden;
+        padding: 4em 1rem 1rem 1rem;
         & ul{
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            align-items: flex-end;
             gap: 2rem;
+
+            a{
+                transition: color 0.4s $ease;
+                font-size: $font-size;
+                color: white;
+                font-weight: 300;
+                &:active, &:hover{
+                    color: $primary;
+                }
+            }
         }
     }
 
     .menu-open{
-        transform: translateX(100vw) !important;
+        transform: translateX(-100vw) !important;
     }
 
     .hero-items{
@@ -106,8 +117,10 @@ header {
             }
             &:first-child a {
                 color: white;
+                text-transform: initial;
                 span{
                     font-weight: 600;
+                    text-transform: uppercase;
                 }
             }
             &:nth-child(2) {
@@ -117,16 +130,16 @@ header {
     }
     
     .hero-items{
-        padding: 12rem 10rem 10rem 10rem;
+        padding: 14rem 11rem 14rem 11rem;
         h1{
             font-size: $font-size-large;
             font-weight: 300;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             color: $primary;
         }
         & a.button{
             @include button;
-            padding: $font-size 2rem;
+            padding: .8em 1.5em;
             color: white;
         }
     }

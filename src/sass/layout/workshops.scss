@@ -1,153 +1,201 @@
 @mixin wscard {
-    & .ws-card-content {
-        background-color: $bggray-light;
-        padding: 2rem;
-    }
+  & .ws-card-content {
+    background-color: $bggray-light;
+  }
 
-    & p {
-        color: white;
-    }
+  & p {
+    color: white;
+  }
 }
 
+@mixin wsquote {
+  z-index: 0;
+  width: 9rem;
+  object-fit: contain;
+  position: absolute;
+}
 
 #workshops {
+  & h3 {
+    color: $heading-workshops;
+  }
 
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-    & .ws-card {
-        @include wscard;
-    }
+  & .ws-card {
+    @include wscard;
+  }
 }
 
 @include breakpoint(0, $mobile) {
-    #workshops {
-        .ws-card{
-            width: 100%;
-        }
+  #workshops {
+    .ws-card {
+      width: 100%;
     }
+
+    .quote-container {
+      img {
+        @include wsquote;
+      }
+    }
+  }
 }
 
 @include breakpoint($mobile, $workshops-full-width) {
-    #workshops {
-        .ws-card{
-            width: 100%;
-        }
-    }
-} 
+  #workshops {
+    .ws-card {
+      width: calc(100% - 7rem);
+      margin-left: 7rem;
 
-@mixin wsquote {
-    width: 6rem;
-    height: 6rem;
-    object-fit: contain;
-    position: absolute;
+    }
+  }
+
+  .quote-container {
+    img {
+      width: 7rem !important;
+    }
+  }
 }
 
 @include breakpoint($desktop) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-
-        .ws-card:first-child {
-            align-self: flex-end;
-        }
-
-        .ws-card:last-child {
-            align-self: flex-start;
-        }
+    .ws-card:first-child {
+      align-self: flex-end;
     }
 
-    .ws-card {
+    .ws-card:last-child {
+      align-self: flex-start;
+    }
+  }
+
+  .ws-card {
+    display: flex;
+    flex-direction: row;
+    width: 67vw;
+    height: 100%;
+    position: relative;
+    margin-left: 8rem;
+    justify-content: center;
+
+    .ws-card-content {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-areas: "icon description quote";
+
+    &.card-type-1{
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: "description icon quote";
+    }
+
+    &.card-type-2{
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-areas: "quote icon description";
+    }
+
+      .ws-icon-container {
+        width: 100%;
+        grid-area: icon;
         display: flex;
-        flex-direction: row;
-        width: 80%;
-        height: 20rem;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        .ws-icon {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #595959;
+          clip-path: circle();
+        }
+      }
+
+      .ws-description {
+        grid-area: description;
+        padding: 2rem;
+
+        p {
+          padding: calc($pad-slim/2) 0 0 0;
+          line-height: $line-height-workshops;
+        }
+
+        & a {
+          @include button;
+          color: white;
+          padding: 0.6em 1.25em;
+          margin: 2rem 0 2rem 0;
+        }
+      }
+
+      .quote-container {
+        grid-area: quote;
+        flex: 1;
         position: relative;
 
-        .ws-card-content {
-            display: flex;
-            flex-direction: row;
-            gap: 2.5rem;
-
-            & .ws-description {
-                flex: 2;
-                flex-direction: column;
-                gap: 2rem;
-                width: 100%;
-
-                p {
-                    padding: calc($pad-slim/2) 0 0 0;
-                    line-height: 1.75rem;
-                }
-
-                & a {
-                    @include button;
-                    color: white;
-                    padding: 1rem 1.5rem;
-                    margin-top: 1rem;
-                }
-            }
-
-            & .ws-icon {
-                width: 100%;
-                height: 100%;
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                & .icon-bg {
-                    background-color: #595959;
-                    padding: 2rem;
-                    border-radius: 50%;
-
-                    img {
-                        scale: 0.8;
-                    }
-                }
-            }
+        &.layout-1 {
+          img {
+            @include wsquote;
+            bottom: 0;
+            right: 0;
+          }
         }
 
-        .quote-container {
-            flex: 1;
-            width: 100%;
-            height: 100%;
-            position: relative;
+        &.layout-2,
+        &.layout-3 {
+          display: flex;
+          flex-direction: column-reverse;
 
-            &.layout-1 {
-                img {
-                    @include wsquote;
-                    bottom: 0;
-                    right: 0;
-                }
-            }
-
-            &.layout-2,
-            &.layout-3 {
-                display: flex;
-                flex-direction: column-reverse;
-
-                img {
-                    @include wsquote;
-                    top: 0;
-                    right: 0;
-                }
-            }
-
-            blockquote {
-                font-size: $font-size-larger;
-            }
+          img {
+            @include wsquote;
+            top: 0;
+            right: 0;
+          }
         }
 
-        span {
-            font-size: 300px;
-            font-weight: 600;
-            color: $bggray-light;
-            display: inline-block;
+        blockquote {
+          font-size: $font-size-quote;
+          z-index: 1;
+          padding: 2rem;
+
+          p {
+            line-height: $line-height-quote;
+          }
         }
+      }
     }
+
+    span {
+      position: absolute;
+      left: -8rem;
+      font-size: 300px;
+      font-weight: 600;
+      color: $bggray-light;
+
+      &.u-align-top{
+        top: 0;
+        margin-top: -3.1rem;
+      }
+
+      &.u-align-center{
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.u-align-bottom{
+        bottom: 0;
+        margin-bottom: -3.5rem;
+      }
+      
+    }
+  }
 }
