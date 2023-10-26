@@ -29,7 +29,7 @@ $font-size-large: 68px;
 $pad-slim: 2rem;
 $pad-vert: 47px;
 $section-pad: 8rem;
-$section-pad-mobile: $section-pad / 2;
+$section-pad-mobile: calc($section-pad / 2);
 $pad-mobile: 1rem;
 
 // Animation
