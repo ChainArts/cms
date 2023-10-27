@@ -11,10 +11,10 @@ section{
 
 
 #about-me{
-    padding: $section-pad $pad-slim $section-pad $pad-slim;
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    padding: $section-pad $pad-slim $section-pad $pad-slim;
     background-color: $bglight-orange;
 
     .about-image{
@@ -27,39 +27,39 @@ section{
     }
 
    .about-content{
-        padding: 2rem 0 2rem 0;
-        flex: 1;
-        & a{
-            @include button;
-            color: black;
-            padding: .6em 1em;
-            margin-top: 1rem;
+    flex: 1;
+    padding: 2rem 0 2rem 0;    
+    & a{
+        @include button;
+        color: black;
+        padding: .6em 1em;
+        margin-top: 1rem;
         }
-        p {
-            margin-bottom: 1rem;
-            max-width: 37rem;
-            width: 100%;
+    p {
+        margin-bottom: 1rem;
+        max-width: 37rem;
+        width: 100%;
         }
     }
 }
 
 .news-carousell{
-    width: 100%;
     display: flex;
     flex-direction: row;
+    width: 100%;
     gap: 2rem; 
     overflow-y: auto;
     flex-wrap: nowrap;
 }
 
 article{
-    background-color: $bggray-ultralight;
-    padding: 2rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     gap: $pad-slim;
     width: 36.5rem;
     min-width: 36.5rem;
+    padding: 2rem 0 2rem 0;
+    background-color: $bggray-ultralight;
     & h3{
         margin-left: 1rem;
     }
@@ -68,16 +68,16 @@ article{
     }
     & a{
         @include button;
+        align-self: flex-start;
         color: black;
         padding: .6em 1em;
-        align-self: flex-start;
         margin-left: 36px;
     }
 
     & img{
-        width: 100%;
         object-fit: cover;
         height: 21rem;
+        width: 100%;
     }
 }
 
@@ -121,8 +121,3 @@ article{
         }
     }
 }
-
-@include breakpoint($desktop) {
-    
-}
-

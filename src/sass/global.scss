@@ -15,15 +15,14 @@ body {
 }
 
 @mixin button {
-    
+    display: inline-block;
+    padding: .8em 1.5em;
     border: 1px solid $border-button;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: $font-size;
-    display: inline-block;
+    text-transform: uppercase;
     transition: color, background-color 0.4s $ease;
-    padding: .8em 1.5em;
-
+    
     &:hover{
         background-color: $border-button;
         color: white;
@@ -35,16 +34,16 @@ body {
 }
 
 .upperheading{
+    margin: 0 !important;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0 !important;
 }
 
 h2{
+    margin-bottom: $pad-vert;
     font-size: $font-size-large;
     font-weight: 300;
     color: $primary;
-    margin-bottom: $pad-vert;
 }
 
 h3{
