@@ -86,6 +86,7 @@ article{
 
     main{
         margin-bottom: $section-pad-mobile;
+        gap: $section-pad-mobile;
     }
   .padded-section-mobile{
         padding: 0 $pad-mobile 0 $pad-mobile;
@@ -96,7 +97,7 @@ article{
     }
 
     #about-me{
-        padding: 0 0 0 0;
+        padding: $section-pad-mobile 0 $section-pad-mobile 0;
         flex-direction: column;
 
         .about-content{
@@ -105,8 +106,8 @@ article{
     }
 
     article{
-        width: 80%;
-        min-width: 80%;
+        width: 100%;
+        min-width: 24rem;
         & p{
             margin: 0 $pad-mobile 0 $pad-mobile;
         }

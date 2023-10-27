@@ -12,7 +12,6 @@
   z-index: 0;
   width: 9rem;
   object-fit: contain;
-  position: absolute;
 }
 
 #workshops {
@@ -27,17 +26,107 @@
   & .ws-card {
     @include wscard;
   }
+
+  .ws-description {
+    grid-area: description;
+    padding: 2rem;
+
+    p {
+      padding: calc($pad-slim/2) 0 0 0;
+      line-height: $line-height-workshops;
+    }
+
+    & a {
+      @include button;
+      color: white;
+      padding: 0.6em 1.25em;
+      margin: 2rem 0 2rem 0;
+    }
+  }
 }
 
 @include breakpoint(0, $mobile) {
   #workshops {
+    gap: 0;
+    h2{
+        margin: 0;
+    }
     .ws-card {
       width: 100%;
+      margin-top: 7rem;
+      position: relative;
+      span{
+        font-size: $font-size-mobile-larger;
+        font-weight: 600;
+        top: -5rem;
+        left: 50%;
+        transform: translateX(2rem);
+        display: block;
+        color: $primary;
+        position: absolute;
+        padding: 1rem;
+        background-color: #d5d5d5;
+        clip-path: circle(1rem);
+        }
+      }
+    
+
+    .ws-card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $pad-mobile $pad-mobile 2rem $pad-mobile;
+        position: relative;
+    }
+
+    .ws-icon-container {
+        top: -4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        .ws-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #595959;
+          border-radius: 50%;
+          padding: 1.6rem;
+          img{
+            width: 5rem;
+            height: 5rem;
+            object-fit: contain;
+          }
+        }
+      }
+
+    .ws-description{
+        padding: 4rem 0 0 0;
+
+        & p{
+            padding: $pad-mobile 0rem $pad-mobile 0;
+        }
+
+        & a{
+            padding: 0.6em 1.25em;
+            font-size: $font-size-mobile;
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    blockquote{
+        font-size: $font-size;
     }
 
     .quote-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
       img {
         @include wsquote;
+        width: 3.6rem !important;
       }
     }
   }
@@ -101,7 +190,7 @@
         grid-template-areas: "quote icon description";
     }
 
-      .ws-icon-container {
+    .ws-icon-container {
         width: 100%;
         grid-area: icon;
         display: flex;
@@ -122,19 +211,6 @@
 
       .ws-description {
         grid-area: description;
-        padding: 2rem;
-
-        p {
-          padding: calc($pad-slim/2) 0 0 0;
-          line-height: $line-height-workshops;
-        }
-
-        & a {
-          @include button;
-          color: white;
-          padding: 0.6em 1.25em;
-          margin: 2rem 0 2rem 0;
-        }
       }
 
       .quote-container {
@@ -145,18 +221,22 @@
         &.layout-1 {
           img {
             @include wsquote;
+            position: absolute;
             bottom: 0;
             right: 0;
           }
         }
 
-        &.layout-2,
-        &.layout-3 {
+        &.layout-2 {
           display: flex;
           flex-direction: column-reverse;
+          p{
+            width: 80%;
+          }
 
           img {
             @include wsquote;
+            position: absolute;
             top: 0;
             right: 0;
           }

@@ -22,11 +22,15 @@ body {
     font-size: $font-size;
     display: inline-block;
     transition: color, background-color 0.4s $ease;
+    padding: .8em 1.5em;
 
     &:hover{
         background-color: $border-button;
         color: white;
+    }
 
+    @include breakpoint(0, $mobile) {
+        font-size: $font-size-mobile;
     }
 }
 
@@ -61,14 +65,19 @@ p{
     }
 
     h2{
-        font-size: 28px;
+        font-size: $font-size-mobile-large;
+        margin-bottom: $pad-mobile;
     }
 
     h3{
-        font-size: 22px;
+        font-size: $font-size-mobile-larger;
     }
 
     .upperheading{
-        font-size: 1rem;
+        font-size: $font-size-mobile;
+    }
+
+    p{
+        line-height: $line-height-paragraph-mobile;
     }
 }

@@ -26,9 +26,11 @@ header {
     }
 
     header{
+        display: flex;
+        flex-direction: column;
         padding: $pad-mobile;
         margin-bottom: $section-pad-mobile;
-        background-position: right 0;
+        background-position: right;
         height: 60vh;
     }
 
@@ -46,7 +48,7 @@ header {
         right: -100vw;
         transition: all 0.4s $ease;
         overflow: hidden;
-        padding: 4em 1rem 1rem 1rem;
+        padding: 4rem 1rem 1rem 1rem;
         & ul{
             display: flex;
             flex-direction: column;
@@ -70,17 +72,19 @@ header {
     }
 
     .hero-items{
-        padding: 5rem 0 0 50%;
+        padding: 2rem;
+        align-self: flex-end;
+        padding-top: 14rem;
         h1{
-            font-size: $font-size;
+            font-size: $font-size-larger;
             font-weight: 300;
             margin-bottom: 2rem;
             color: $primary;
+            display: flex;
+            flex-direction: column;
         }
         & a.button{
             @include button;
-            font-size: $font-size-mobile;
-            padding: calc($font-size/2) 1rem;
             color: white;
         }
     }
@@ -139,7 +143,6 @@ header {
         }
         & a.button{
             @include button;
-            padding: .8em 1.5em;
             color: white;
         }
     }
