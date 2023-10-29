@@ -21,10 +21,10 @@
         & span{
             content: "";
             display: block;
-            margin-bottom: 8px;
-            height: 2px;
+            margin-bottom: 0.5rem;
+            height: 1px;
             width: 2rem;
-            background-color: $primary;
+            background-color: $heading-workshops;
             transition: all 0.4s $ease;
         }
     }
@@ -33,11 +33,11 @@
         align-items: center;
         span{
             &:nth-child(1){
-                transform: rotate(45deg) translate(0.225rem, 0.225rem);
+                transform: rotate(45deg) translate(0.2rem, 0.2rem);
             }
             &:nth-child(2){
                 width: 2rem;                
-                transform: rotate(-45deg) translate(0.225rem, -0.225rem);
+                transform: rotate(-45deg) translate(0.2rem, -0.2rem);
             }
         }
     }
