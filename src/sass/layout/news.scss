@@ -9,6 +9,7 @@
 article{
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: rem($pad-slim);
     padding: 2rem 0 2rem 0;
     background-color: $bggray-ultralight;
@@ -36,11 +37,16 @@ article{
 @include breakpoint(0, $mobile) {
 
     .news-carousell{
+        padding: 0 rem($pad-mobile);
         gap: rem($pad-mobile);
     }
 
+    h2, .upperheading{
+        padding-left: rem($pad-mobile);
+    }
+
     article{
-        width: 100%;
+        
         min-width: 24rem;
         & p{
             margin: 0 rem($pad-mobile) 0 rem($pad-mobile);
@@ -71,7 +77,6 @@ article{
     }
 
     article{
-        width: 36.5rem;
         min-width: 36.5rem;
     }
 
