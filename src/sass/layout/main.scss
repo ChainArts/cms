@@ -1,12 +1,12 @@
 main{
     display: flex;
     flex-direction: column;
-    gap: $section-pad;
-    margin-bottom: $section-pad;
+    gap: rem($section-pad);
+    margin-bottom: rem($section-pad);
 }
 
 section{
-    padding: 0 $pad-slim 0 $pad-slim;
+    padding: 0 rem($pad-slim);
 }
 
 
@@ -14,7 +14,7 @@ section{
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    padding: $section-pad $pad-slim $section-pad $pad-slim;
+    padding: rem($section-pad) rem($pad-slim);
     background-color: $bglight-orange;
 
     .about-image{
@@ -43,53 +43,16 @@ section{
     }
 }
 
-.news-carousell{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 2rem; 
-    overflow-y: auto;
-    flex-wrap: nowrap;
-}
-
-article{
-    display: flex;
-    flex-direction: column;
-    gap: $pad-slim;
-    width: 36.5rem;
-    min-width: 36.5rem;
-    padding: 2rem 0 2rem 0;
-    background-color: $bggray-ultralight;
-    & h3{
-        margin-left: 1rem;
-    }
-    & p{
-        margin-left: 36px;
-    }
-    & a{
-        @include button;
-        align-self: flex-start;
-        color: black;
-        padding: .6em 1em;
-        margin-left: 36px;
-    }
-
-    & img{
-        object-fit: cover;
-        height: 21rem;
-        width: 100%;
-    }
-}
 
 
 @include breakpoint(0, $mobile) {
 
     main{
-        margin-bottom: $section-pad-mobile;
-        gap: $section-pad-mobile;
+        margin-bottom: rem($section-pad-mobile);
+        gap: rem($section-pad-mobile);
     }
   .padded-section-mobile{
-        padding: 0 $pad-mobile 0 $pad-mobile;
+        padding: 0 rem($pad-mobile);
     }
 
     section{
@@ -97,27 +60,11 @@ article{
     }
 
     #about-me{
-        padding: $section-pad-mobile 0 $section-pad-mobile 0;
+        padding: rem($section-pad-mobile) 0;
         flex-direction: column;
 
         .about-content{
-            padding: 0 $pad-mobile 0 $pad-mobile ;
+            padding: 0 rem($pad-mobile);
         }        
-    }
-
-    article{
-        width: 100%;
-        min-width: 24rem;
-        & p{
-            margin: 0 $pad-mobile 0 $pad-mobile;
-        }
-
-        & img{
-            height: 13rem;
-        }
-
-        & a {
-            margin-left: $pad-mobile;
-        }
     }
 }

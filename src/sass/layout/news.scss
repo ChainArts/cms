@@ -1,0 +1,78 @@
+.news-carousell{
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    overflow-y: auto;
+    flex-wrap: nowrap;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    gap: rem($pad-slim);
+    padding: 2rem 0 2rem 0;
+    background-color: $bggray-ultralight;
+    & h3{
+        margin-left: 1rem;
+    }
+    & p{
+        margin-left: rem($pad-slim);
+    }
+    & a{
+        @include button;
+        align-self: flex-start;
+        color: black;
+        padding: .6em 1em;
+        margin-left: rem($pad-slim);
+    }
+
+    & img{
+        object-fit: cover;
+        height: 21rem;
+        width: 100%;
+    }
+}
+
+@include breakpoint(0, $mobile) {
+
+    .news-carousell{
+        gap: rem($pad-mobile);
+    }
+
+    article{
+        width: 100%;
+        min-width: 24rem;
+        & p{
+            margin: 0 rem($pad-mobile) 0 rem($pad-mobile);
+        }
+
+        & img{
+            height: 13rem;
+        }
+
+        & a {
+            margin-left: rem($pad-mobile);
+        }
+    }
+}
+
+@include breakpoint($desktop){
+    #news{
+        padding: 0;
+    }
+
+    h2, .upperheading{
+        padding-left: rem($pad-slim);
+    }
+
+    .news-carousell{
+        padding: 0 rem($pad-slim);
+        gap: 2rem;
+    }
+
+    article{
+        width: 36.5rem;
+        min-width: 36.5rem;
+    }
+
+}

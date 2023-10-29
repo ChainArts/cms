@@ -12,12 +12,12 @@ footer {
 
 @include breakpoint(0, $mobile) {
     footer{
-        gap: calc($pad-mobile/2);
-        height: $section-pad;
-        padding: 0.5rem calc(2*$pad-mobile);
+        gap: rem($pad-mobile/2);
+        height: rem($section-pad);
+        padding: 0.5rem rem(2*$pad-mobile);
         & p{
             &:first-child{
-                font-size: $font-size-mobile-larger;
+                font-size: rem($font-size-mobile-larger);
             }
         }
     }
@@ -27,10 +27,10 @@ footer {
     footer{
         flex-direction: row;
         justify-content: space-between;
-        height: calc(2*$section-pad);
-        padding: 2rem $pad-vert ;
+        height: rem(2*$section-pad);
+        padding: 2rem rem($pad-vert) ;
         & p:first-child{
-            font-size: $font-size-larger;
+            font-size: rem($font-size-larger);
         }
     }
 }

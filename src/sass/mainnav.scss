@@ -9,9 +9,9 @@ nav ul{
 }
 
 header {
-    margin-bottom: $section-pad;
+    margin-bottom: rem($section-pad);
     height: 97vh;
-    padding: $pad-vert 4rem $pad-vert $pad-slim;
+    padding: rem($pad-vert) 4rem rem($pad-vert) rem($pad-slim);
     background-color: black;
     background-image: url('./images/hero_img.png');
     background-size: cover;
@@ -30,8 +30,8 @@ header {
         display: flex;
         height: 60vh;
         flex-direction: column;
-        padding: $pad-mobile;
-        margin-bottom: $section-pad-mobile;
+        padding: rem($pad-mobile);
+        margin-bottom: rem($section-pad-mobile);
         background-position: right;
     }
 
@@ -59,7 +59,7 @@ header {
 
             a{
                 transition: color 0.4s $ease;
-                font-size: $font-size;
+                font-size: rem($font-size);
                 color: white;
                 font-weight: 300;
                 &:active, &:hover{
@@ -81,7 +81,7 @@ header {
             display: flex;
             flex-direction: column;
             margin-bottom: 2rem;
-            font-size: $font-size-larger;
+            font-size: rem($font-size-larger);
             font-weight: 300;
             color: $primary;
             
@@ -134,7 +134,7 @@ header {
     .hero-items{
         padding: 14rem 11rem 14rem 11rem;
         h1{
-            font-size: $font-size-large;
+            font-size: rem($font-size-large);
             font-weight: 300;
             margin-bottom: 3rem;
             color: $primary;

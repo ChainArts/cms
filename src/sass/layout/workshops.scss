@@ -10,7 +10,7 @@
 
 @mixin wsquote {
   z-index: 0;
-  width: 9rem;
+  width: 50%;
   object-fit: contain;
 }
 
@@ -32,8 +32,8 @@
     padding: 2rem;
 
     p {
-      padding: calc($pad-slim/2) 0 0 0;
-      line-height: $line-height-workshops;
+      padding: rem($pad-slim/2) 0 0 0;
+      line-height: rem($line-height-workshops);
     }
 
     & a {
@@ -62,7 +62,7 @@
         top: -5rem;
         left: 50%;
         padding: 1rem;
-        font-size: $font-size-mobile-larger;
+        font-size: rem($font-size-mobile-larger);
         font-weight: 600;
         color: $primary;
         background-color: $bggray-lighter;
@@ -77,7 +77,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: $pad-mobile $pad-mobile 2rem $pad-mobile;
+        padding: rem($pad-mobile) rem($pad-mobile) 2rem rem($pad-mobile);
     }
 
     .ws-icon-container {
@@ -106,18 +106,18 @@
         padding: 4rem 0 0 0;
 
         & p{
-            padding: $pad-mobile 0 $pad-mobile 0;
+            padding: rem($pad-mobile) 0 rem($pad-mobile) 0;
         }
 
         & a{
             padding: 0.6em 1.25em;
-            font-size: $font-size-mobile;
+            font-size: rem($font-size-mobile);
             margin: 0 0 1rem 0;
         }
     }
 
     blockquote{
-        font-size: $font-size;
+        font-size: rem($font-size);
     }
 
     .quote-container {
@@ -139,12 +139,6 @@
       width: calc(100% - 7rem);
       margin-left: 7rem;
 
-    }
-  }
-
-  .quote-container {
-    img {
-      width: 7rem !important;
     }
   }
 }
@@ -207,6 +201,9 @@
           height: 100%;
           background-color: #595959;
           clip-path: circle();
+          img{
+            scale: 0.95;
+          }
         }
       }
 
@@ -244,12 +241,12 @@
         }
 
         blockquote {
-          font-size: $font-size-quote;
+          font-size: rem($font-size-quote);
           z-index: 1;
           padding: 2rem;
 
           p {
-            line-height: $line-height-quote;
+            line-height: rem($line-height-quote);
           }
         }
       }

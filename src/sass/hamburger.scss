@@ -5,8 +5,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        top: $pad-mobile;
-        right: $pad-mobile;
+        top: rem($pad-mobile);
+        right: rem($pad-mobile);
         cursor: pointer;
         width: 2rem;
         height: 2rem;

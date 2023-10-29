@@ -10,7 +10,7 @@ a{
 body {
     font-family: 'Source Sans 3', sans-serif;
     min-width: 100%;
-    font-size: $font-size;
+    font-size: rem($font-size);
     background: $bgwhite;
 }
 
@@ -19,7 +19,7 @@ body {
     padding: .8em 1.5em;
     border: 1px solid $border-button;
     font-weight: 600;
-    font-size: $font-size;
+    font-size: rem($font-size);
     text-transform: uppercase;
     transition: color, background-color 0.4s $ease;
     
@@ -29,7 +29,7 @@ body {
     }
 
     @include breakpoint(0, $mobile) {
-        font-size: $font-size-mobile;
+        font-size: rem($font-size-mobile);
     }
 }
 
@@ -40,14 +40,14 @@ body {
 }
 
 h2{
-    margin-bottom: $pad-vert;
-    font-size: $font-size-large;
+    margin-bottom: rem($pad-vert);
+    font-size: rem($font-size-large);
     font-weight: 300;
     color: $primary;
 }
 
 h3{
-    font-size: $font-size-larger;
+    font-size: rem($font-size-larger);
     font-weight: 300;
     color: $primary;
 }
@@ -55,28 +55,28 @@ h3{
 p{
     font-weight: 300;
     color: $bggray-light;
-    line-height: $line-height-paragraph;
+    line-height: rem($line-height-paragraph);
 }
 
 @include breakpoint(0, $mobile){
     body{
-        font-size: $font-size-mobile;
+        font-size: rem($font-size-mobile);
     }
 
     h2{
-        font-size: $font-size-mobile-large;
-        margin-bottom: $pad-mobile;
+        font-size: rem($font-size-mobile-large);
+        margin-bottom: rem($pad-mobile);
     }
 
     h3{
-        font-size: $font-size-mobile-larger;
+        font-size: rem($font-size-mobile-larger);
     }
 
     .upperheading{
-        font-size: $font-size-mobile;
+        font-size: rem($font-size-mobile);
     }
 
     p{
-        line-height: $line-height-paragraph-mobile;
+        line-height: rem($line-height-paragraph-mobile);
     }
 }
