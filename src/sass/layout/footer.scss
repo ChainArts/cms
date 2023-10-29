@@ -3,17 +3,27 @@ footer {
     flex-direction: column;
     max-width: 100vw;
     width: 100%;
+    height: 100%;
     background-color: $bggray-light;
 
     & p{
     color: white;
+    }
+
+    .footer-links{
+        display: flex;
+        flex-direction: column;
+        gap: rem($pad-mobile);
+        li {
+            list-style: circle;
+            color: white;
+        }
     }
 }
 
 @include breakpoint(0, $mobile) {
     footer{
         gap: rem($pad-mobile/2);
-        height: rem($section-pad);
         padding: 0.5rem rem(2*$pad-mobile);
         & p{
             &:first-child{
@@ -27,7 +37,6 @@ footer {
     footer{
         flex-direction: row;
         justify-content: space-between;
-        height: rem(2*$section-pad);
         padding: 2rem rem($pad-vert) ;
         & p:first-child{
             font-size: rem($font-size-larger);
